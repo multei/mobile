@@ -1,6 +1,6 @@
 # mobileflutter
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 A new Flutter project.
@@ -28,6 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/guilhermeleonel"><img src="https://avatars0.githubusercontent.com/u/727444?v=4" width="100px;" alt=""/><br /><sub><b>Guilherme Leonel</b></sub></a><br /><a href="https://github.com/multei/mobile-flutter/commits?author=guilhermeleonel" title="Code">💻</a></td>
+    <td align="center"><a href="http://jimmyandrade.com"><img src="https://avatars3.githubusercontent.com/u/2307245?v=4" width="100px;" alt=""/><br /><sub><b>Jimmy Andrade</b></sub></a><br /><a href="https://github.com/multei/mobile-flutter/commits?author=jimmyandrade" title="Code">💻</a></td>
   </tr>
 </table>
 
