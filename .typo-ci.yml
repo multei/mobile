@@ -1,0 +1,8 @@
+# chore: update Typo CI file
+---
+dictionaries:
+  - en
+  - pt_BR
+excluded_words:
+  - typoci
+spellcheck_filenames: true
