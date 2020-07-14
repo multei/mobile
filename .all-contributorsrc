@@ -23,6 +23,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "tuliooassis",
+      "name": "Túlio Assis",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/17442350?v=4",
+      "profile": "http://tuliooassis.github.io",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
