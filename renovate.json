@@ -1,0 +1,25 @@
+{
+  "automerge": false,
+  "enabled": true,
+  "extends": [
+    "config:base"
+  ],
+  "ignoreDeps": [
+    "snyk"
+  ],
+  "labels": ["dependencies", "renovate"],
+  "masterIssue": true,
+  "masterIssueAutoclose": true,
+  "packageRules": [
+    {
+      "packagePatterns": ["snyk"],
+      "labels": ["dependencies", "renovate", "security"]
+    }
+  ],
+  "semanticCommits": true,
+  "unicodeEmoji": true,
+  "updateLockFiles": true,
+  "vulnerabilityAlerts": {
+    "enabled": true
+  }
+}
