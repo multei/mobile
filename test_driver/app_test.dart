@@ -20,13 +20,13 @@ void main() {
     // Close the connection to the driver after the tests have completed.
     tearDownAll(() async {
       if (driver != null) {
-        driver.close();
+        await driver.close();
       }
     });
 
     test('starts at 0', () async {
       // Use the `driver.getText` method to verify the counter starts at 0.
-      expect(await driver.getText(counterTextFinder), "0");
+      expect(await driver.getText(counterTextFinder), '0');
     });
 
     test('increments the counter', () async {
@@ -34,7 +34,7 @@ void main() {
       await driver.tap(buttonFinder);
 
       // Then, verify the counter text is incremented by 1.
-      expect(await driver.getText(counterTextFinder), "1");
+      expect(await driver.getText(counterTextFinder), '1');
     });
   });
 }
