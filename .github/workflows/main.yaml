@@ -26,7 +26,7 @@ jobs:
     runs-on: macOS-latest
     steps:
     - name: List all simulators
-      run: make ios_simulators
+      run: xcrun instruments -s
     - name: Start Simulator
       run: |
         UDID=$(
