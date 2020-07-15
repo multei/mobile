@@ -35,15 +35,17 @@ unit_test:
 	flutter test
 
 ui_test:
-	open -a Simulator
 	flutter drive --target=test_driver/app.dart
 
 # ==================================================================================================
 # Build
 # ==================================================================================================
 
-assemble_debug:
+build_android:
 	flutter build apk --debug --split-per-abi
+
+build_ios:
+	flutter build ios --release --no-codesign
 
 deploy-to-internal:
 	bash scripts/release_internal.sh
