@@ -2,7 +2,7 @@
 # Setup
 # ==================================================================================================
 
-setup: install_precommit install_prepush ## all setup for project first local execution goes here
+setup: install_precommit install_prepush install_commitmsg ## all setup for project first local execution goes here
 
 install: ## install flutter dependencies
 	flutter pub get
@@ -16,6 +16,11 @@ install_prepush: ## install prepush hook
 	mkdir -p .git/hooks
 	cp scripts/pre-push.sh .git/hooks/pre-push
 	chmod +x .git/hooks/pre-push
+
+install_commitmsg: ## install prepush hook
+	mkdir -p .git/hooks
+	cp scripts/commit-msg.sh .git/hooks/commit-msg
+	chmod +x .git/hooks/commit-msg
 
 # ==================================================================================================
 # Helpers
