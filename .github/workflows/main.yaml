@@ -21,6 +21,9 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+      - uses: codecov/codecov-action@v1.0.2
+        with:
+          file: ./coverage/lcov.info
       - name: Install dependencies
         run: make install
       - name: Run lint
