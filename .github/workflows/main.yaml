@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - master
 name: Test, Build and Release apk
 jobs:
   ci:
@@ -35,4 +38,7 @@ jobs:
       - name: Build APK
         run: make build_android
       - name: Deploy to internal
-        run: make deploy-to-internal
+        uses: anothrNick/github-tag-action@1.22.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.multei }}
+          WITH_V: true
