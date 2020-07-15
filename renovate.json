@@ -4,9 +4,7 @@
   "extends": [
     "config:base"
   ],
-  "ignoreDeps": [
-    "snyk"
-  ],
+  "ignoreDeps": ["gradle", "snyk"],
   "labels": ["dependencies", "renovate"],
   "masterIssue": true,
   "masterIssueAutoclose": true,
