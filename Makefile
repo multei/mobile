@@ -40,7 +40,7 @@ lint:
 	flutter analyze
 
 unit_test:
-	flutter test
+	flutter test --coverage
 
 ui_test:
 	flutter drive --target=test_driver/app.dart
