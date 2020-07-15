@@ -28,7 +28,7 @@ jobs:
       run: make list_simulators
     - name: Start simulator
       run: |
-        UDID=$(make list_simulators awk -F ' *[][]' -v 'device=${{ matrix.device }}' '$1 == device { print $2 }')
+        UDID=$(make list_simulators | awk -F ' *[][]' -v 'device=${{ matrix.device }}' '$1 == device { print $2 }')
         xcrun simctl boot "${UDID:?No Simulator with this name found}"
     - name: Run UI tests
       run: make ui_test
