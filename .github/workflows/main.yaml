@@ -5,7 +5,7 @@ on:
 name: Test, Build and Release apk
 jobs:
   macos:
-    name: CI
+    name: Lint & UI tests
     strategy:
       matrix:
         device:
@@ -22,8 +22,6 @@ jobs:
         run: make install
       - name: Run lint
         run: make lint
-      - name: List all simulators
-        run: make list_simulators
       - name: Start simulator
         run: |
           UDID=$(make list_simulators | awk -F ' *[][]' -v 'device=${{ matrix.device }}' '$1 == device { print $2 }')
@@ -31,6 +29,7 @@ jobs:
       - name: Run UI tests
         run: make ui_test
   ubuntu:
+    name: Unit & Coverage & Bump tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -42,6 +41,12 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+      - name: Install dependencies
+        run: make install
+      - name: Run unit tests
+        run: make unit_test
+      - name: Build APK
+        run: make build_android
       - uses: codecov/codecov-action@v1.0.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -51,7 +56,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.multei }}
           WITH_V: true
-      - name: Run unit tests
-        run: make unit_test
-      - name: Build APK
-        run: make build_android
