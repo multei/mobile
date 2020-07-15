@@ -29,7 +29,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/guilhermeleonel"><img src="https://avatars0.githubusercontent.com/u/727444?v=4" width="100px;" alt=""/><br /><sub><b>Guilherme Leonel</b></sub></a><br /><a href="https://github.com/multei/mobile-flutter/commits?author=guilhermeleonel" title="Code">💻</a></td>
     <td align="center"><a href="http://jimmyandrade.com"><img src="https://avatars3.githubusercontent.com/u/2307245?v=4" width="100px;" alt=""/><br /><sub><b>Jimmy Andrade</b></sub></a><br /><a href="https://github.com/multei/mobile-flutter/commits?author=jimmyandrade" title="Code">💻</a> <a href="#maintenance-jimmyandrade" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="http://tuliooassis.github.io"><img src="https://avatars1.githubusercontent.com/u/17442350?v=4" width="100px;" alt=""/><br /><sub><b>Túlio Assis</b></sub></a><br /><a href="#maintenance-tuliooassis" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="http://tuliooassis.github.io"><img src="https://avatars1.githubusercontent.com/u/17442350?v=4" width="100px;" alt=""/><br /><sub><b>Túlio Assis</b></sub></a><br /><a href="#maintenance-tuliooassis" title="Maintenance">🚧</a> <a href="https://github.com/multei/mobile-flutter/commits?author=tuliooassis" title="Code">💻</a></td>
   </tr>
 </table>
 
