@@ -44,3 +44,6 @@ ui_test:
 
 assemble_debug:
 	flutter build apk --debug --split-per-abi
+
+deploy-to-internal:
+	bash scripts/release_internal.sh
