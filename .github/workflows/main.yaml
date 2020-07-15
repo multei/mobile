@@ -4,7 +4,7 @@ on:
       - master
 name: Test, Build and Release apk
 jobs:
-  ci:
+  macos:
     name: CI
     strategy:
       matrix:
@@ -15,6 +15,27 @@ jobs:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      - name: Install dependencies
+        run: make install
+      - name: Run lint
+        run: make lint
+      - name: List all simulators
+        run: make list_simulators
+      - name: Start simulator
+        run: |
+          UDID=$(make list_simulators | awk -F ' *[][]' -v 'device=${{ matrix.device }}' '$1 == device { print $2 }')
+          xcrun simctl boot "${UDID:?No Simulator with this name found}"
+      - name: Run UI tests
+        run: make ui_test
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: "0"
       - uses: actions/setup-java@v1
         with:
           java-version: "12.x"
@@ -24,30 +45,12 @@ jobs:
       - uses: codecov/codecov-action@v1.0.2
         with:
           file: ./coverage/lcov.info
-      - name: Install dependencies
-        run: make install
-      - name: Run lint
-        run: make lint
-      - name: Run unit tests
-        run: make unit_test
-      - name: List all simulators
-        run: make list_simulators
-      - name: Start simulator
-        run: |
-          UDID=$(make list_simulators | awk -F ' *[][]' -v 'device=${{ matrix.device }}' '$1 == device { print $2 }')
-          xcrun simctl boot "${UDID:?No Simulator with this name found}"
-      - name: Run UI tests
-        run: make ui_test
-      - name: Build APK
-        run: make build_android
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-        with:
-          fetch-depth: "0"
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.17.2
         env:
           GITHUB_TOKEN: ${{ secrets.multei }}
           WITH_V: true
+      - name: Run unit tests
+        run: make unit_test
+      - name: Build APK
+        run: make build_android
