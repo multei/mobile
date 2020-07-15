@@ -4,10 +4,10 @@ git stash -q --keep-index
 
 flutter analyze
 
+git stash pop -q
+
 if [ $? -ne 0 ]; then
-  git stash pop -q
   exit 1
 fi
 
-git stash pop -q
 exit 0
