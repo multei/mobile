@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-release_internal() {
-}
-
 push_tag() {
     git fetch --tags
     VERSION_NAME=`bash scripts/generate_apk_version.sh`
@@ -17,5 +14,4 @@ fetch_tags() {
 }
 
 fetch_tags
-release_internal
 push_tag
