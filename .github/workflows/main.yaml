@@ -44,6 +44,7 @@ jobs:
           channel: "stable"
       - uses: codecov/codecov-action@v1.0.2
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.17.2
