@@ -16,8 +16,3 @@ jobs:
       - run: make lint
       - run: make unit_test
       - run: make assemble_debug
-      # - name: Create a Release APK
-      #   uses: ncipollo/release-action@v1
-      #   with:
-      #     artifacts: "build/app/outputs/apk/debug/*.apk"
-      #     token: ${{ secrets.multei }}

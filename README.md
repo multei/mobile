@@ -3,6 +3,8 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+![CI](https://github.com/multei/mobile-flutter/workflows/Test,%20Build%20and%20Release%20apk/badge.svg)
+
 A new Flutter project.
 
 ## Getting Started
