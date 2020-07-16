@@ -2,7 +2,7 @@
 # Setup
 # ==================================================================================================
 
-setup: install_precommit install_prepush install_commitmsg ## all setup for project first local execution goes here
+setup: install_precommit install_prepush install_commitmsg install ## all setup for project first local execution goes here
 
 install: ## install flutter dependencies
 	flutter pub get
