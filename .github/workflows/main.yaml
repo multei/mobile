@@ -4,7 +4,7 @@ on:
       - master
 name: Test, Build and Release apk
 jobs:
-  macos:
+  lint_and_ui:
     name: Lint & UI tests
     strategy:
       matrix:
@@ -28,8 +28,10 @@ jobs:
           xcrun simctl boot "${UDID:?No Simulator with this name found}"
       - name: Run UI tests
         run: make ui_test
-  ubuntu:
-    name: Unit & Coverage & Bump tag
+  unit_and_cov:
+    name: Unit & Coverage
+    strategy:
+      fail-fast: true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -51,6 +53,14 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
+  bump:
+    name: Bump version
+    needs: [lint_and_ui, unit_and_cov]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: "0"
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.17.2
         env:
