@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileflutter/secondScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -105,6 +106,23 @@ class _MyHomePageState extends State<MyHomePage> {
               key: Key('counter'),
               style: Theme.of(context).textTheme.headline4,
             ),
+            FlatButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondScreen()),
+                );
+              },
+              color: Colors.orange,
+              padding: EdgeInsets.all(10.0),
+              child: Column(
+                // Replace with a Row for horizontal icon + text
+                children: <Widget>[
+                  Icon(Icons.navigate_next),
+                  Text("Next Page")
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -113,7 +131,9 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
