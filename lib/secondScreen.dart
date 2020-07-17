@@ -32,19 +32,19 @@ class _SecondScreenState extends State<SecondScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              title: Text("From where do you want to take the photo?"),
+              title: Text('From where do you want to take the photo?'),
               content: SingleChildScrollView(
                 child: ListBody(
                   children: <Widget>[
                     GestureDetector(
-                      child: Text("Gallery"),
+                      child: Text('Gallery'),
                       onTap: () {
                         _openGallery(context);
                       },
                     ),
                     Padding(padding: EdgeInsets.all(8.0)),
                     GestureDetector(
-                      child: Text("Camera"),
+                      child: Text('Camera'),
                       onTap: () {
                         _openCamera(context);
                       },
@@ -77,7 +77,7 @@ class _SecondScreenState extends State<SecondScreen> {
     if (_image != null) {
       return Image.file(_image, width: 500, height: 500);
     } else {
-      return Text("Please select an image");
+      return Text('Please select an image');
     }
   }
 }

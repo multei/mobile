@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Replace with a Row for horizontal icon + text
                 children: <Widget>[
                   Icon(Icons.navigate_next),
-                  Text("Next Page")
+                  Text('Next Page')
                 ],
               ),
             ),
