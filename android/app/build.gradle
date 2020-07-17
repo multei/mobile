@@ -42,6 +42,7 @@ android {
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders = [gmaps_api_key: "GMAPS_API_KEY"]
     }
 
     buildTypes {
