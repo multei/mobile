@@ -57,7 +57,7 @@ class _SecondScreenState extends State<SecondScreen> {
 
   void _openGallery(BuildContext context) async {
     final _picker = ImagePicker();
-    PickedFile image = await _picker.getImage(source: ImageSource.gallery);
+    var image = await _picker.getImage(source: ImageSource.gallery);
     setState(() {
       _image = File(image.path);
     });
@@ -66,7 +66,7 @@ class _SecondScreenState extends State<SecondScreen> {
 
   void _openCamera(BuildContext context) async {
     final _picker = ImagePicker();
-    PickedFile image = await _picker.getImage(source: ImageSource.camera);
+    var image = await _picker.getImage(source: ImageSource.camera);
     setState(() {
       _image = File(image.path);
     });
