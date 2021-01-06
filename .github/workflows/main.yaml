@@ -49,7 +49,7 @@ jobs:
         run: make unit_test
       - name: Build APK
         run: make build_android
-      - uses: codecov/codecov-action@v1.0.14
+      - uses: codecov/codecov-action@v1.2.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
